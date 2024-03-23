@@ -1,4 +1,6 @@
-﻿using System;
+﻿using domain;
+using product;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,11 @@ namespace presentacion
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmDetalle_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

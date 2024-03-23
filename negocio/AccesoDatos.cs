@@ -24,13 +24,13 @@ namespace product
             cmd = new SqlCommand();
         }
 
-        public void setQuery(string query)
+        public void toSetQuery(string query)
         {
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = query;
         }
 
-        public void executeReader()
+        public void toExecuteReader()
         {
             cmd.Connection = conn;
 
@@ -45,7 +45,7 @@ namespace product
             }
         }
 
-        public void excecuteNonQuery()
+        public void toExcecuteNonQuery()
         {
             cmd.Connection = conn;
 
@@ -60,12 +60,17 @@ namespace product
             }
         }
 
-        public void setParameter(string name, object value)
+        public void toSetParameter(string name, object value)
         {
             cmd.Parameters.AddWithValue(name, value);
         }
 
-        public void closeConnection()
+        public void toClearParameter()
+        {
+            cmd.Parameters.Clear();
+        }
+
+        public void toCloseConnection()
         {
             if (reader != null)
             {
